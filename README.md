@@ -50,7 +50,7 @@ These are all included in the Lib Folder
 
 #### Installing Required Libraries:
 
-1. **Download Libraries**: Download the /Lib folder from this Repo.
+1. **Download Libraries**: Download the Lib zip files from this Repo and extract it
 
 2. **Copy Required Libraries to Pico**:
    - Connect your Pico to your computer.
