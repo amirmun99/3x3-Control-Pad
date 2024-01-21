@@ -16,6 +16,7 @@ Below will be a guide on how to install the software. Pinout is in the file name
 
 - Raspberry Pi Pico with CircuitPython installed.
 - 3D Printed case
+- 8x 6mm*3mm magnets
 - 0.96 Inch OLED Module (128x64)
 - 9 mechanical switches
 - 2 rotary encoders:
@@ -23,6 +24,23 @@ Below will be a guide on how to install the software. Pinout is in the file name
   - Rotary Encoder 2 (Layer Selector)
 
  ---
+
+# Printing/Case assembly
+
+The case prints in two parts, top and bottom. I printed them in ASA but any material should be fine. 2-3 walls and 15-25% infill for both parts.
+
+Glue the magnets in using superglue, ensure that polarity is correct.
+
+The OLED can be glued in using hot glue or super glue as well
+
+The Pico is held in with double sided 3M Tape.
+
+I used knobs from here: https://www.printables.com/model/334111-encoder-knob Specifically the 20mm variant scaled up by 1mm
+
+I used these keycaps: https://www.printables.com/model/118708-simple-cherry-mx-keycap
+
+ 
+# Basic Script Install Guide
 
 ### List of Required Libraries
 
@@ -37,8 +55,6 @@ These are all included in the Lib Folder
 - `time` for handling time-related functions.
 
 ---
-
-### Basic Script Install Guide
 
 #### Installing CircuitPython on Raspberry Pi Pico:
 
@@ -83,7 +99,7 @@ These are all included in the Lib Folder
 ---
 
 
-## Script modification:
+# Script modification:
 
 ### Modifying Macros
 
