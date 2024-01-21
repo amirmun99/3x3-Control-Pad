@@ -1,5 +1,27 @@
 # 3x3-Control-Pad
 A 9 Keyswitch Macro Pad with 2 rotary encoders and support for 6+ Layers of Macros.
+---
+
+- [3x3-Control-Pad](#3x3-control-pad)
+  * [What is this?](#what-is-this)
+  * [List of Required Hardware](#list-of-required-hardware)
+- [Printing/Case assembly](#printingcase-assembly)
+- [Basic Script Install Guide](#basic-script-install-guide)
+  * [List of Required Libraries](#list-of-required-libraries)
+  * [Installing CircuitPython on Raspberry Pi Pico](#installing-circuitpython-on-raspberry-pi-pico)
+  * [Installing Required Libraries](#installing-required-libraries)
+  * [Installing the Script](#installing-the-script)
+  * [Troubleshooting](#troubleshooting)
+- [Script modification](#script-modification)
+  * [Modifying Macros](#modifying-macros)
+    + [Example: Changing Macros](#example-changing-macros)
+    + [Adding a New Layer](#adding-a-new-layer)
+  * [Updating the Screen Display](#updating-the-screen-display)
+    + [Example: Adding a Display Name for a New Keycode](#example-adding-a-display-name-for-a-new-keycode)
+  * [Practical Examples](#practical-examples)
+    + [Example 1: Adding a Layer for Media Controls](#example-1-adding-a-layer-for-media-controls)
+    + [Example 2: Custom Macro Layer](#example-2-custom-macro-layer)
+  * [Important Notes](#important-notes)
 
 ---
 ## What is this?
