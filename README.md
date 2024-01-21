@@ -83,4 +83,132 @@ These are all included in the Lib Folder
 ---
 
 
-### Script modification:
+## Script modification:
+
+### Modifying Macros
+
+Your macros are defined in the `layers` array. Each layer is a list of `Keycode` values from the `adafruit_hid.keycode` library, representing different keyboard keys or combinations.
+
+#### Example: Changing Macros
+
+Suppose you want to change the first key in Layer 1 to be the "Enter" key. You'll locate the first list in the `layers` array and replace `Keycode.A` with `Keycode.ENTER`.
+
+Before:
+```python
+layers = [
+    [Keycode.A, Keycode.B, Keycode.C, ...],
+    ...
+]
+```
+
+After:
+```python
+layers = [
+    [Keycode.ENTER, Keycode.B, Keycode.C, ...],
+    ...
+]
+```
+
+#### Adding a New Layer
+
+To add a new layer, you'll append a new list to the `layers` array. For example, adding a layer with various multimedia keys:
+
+```python
+layers = [
+    ...,
+    [Keycode.PLAY_PAUSE, Keycode.VOLUME_UP, Keycode.VOLUME_DOWN, ...]
+]
+```
+
+### Updating the Screen Display
+
+The function `keycode_to_string` translates `Keycode` values to a string representation for the display. You need to update this function if you add keycodes that are not already mapped.
+
+#### Example: Adding a Display Name for a New Keycode
+
+If you added `Keycode.PLAY_PAUSE`, but it's not in `keycode_to_string`, add it like this:
+
+Before:
+```python
+def keycode_to_string(keycode):
+    keycode_dict = {
+        Keycode.A: "A",
+        Keycode.B: "B",
+        ...
+    }
+    return keycode_dict.get(keycode, "Unknown Key")
+```
+
+After:
+```python
+def keycode_to_string(keycode):
+    keycode_dict = {
+        Keycode.A: "A",
+        Keycode.B: "B",
+        Keycode.PLAY_PAUSE: "Play/Pause",
+        ...
+    }
+    return keycode_dict.get(keycode, "Unknown Key")
+```
+
+### Practical Examples
+
+#### Example 1: Adding a Layer for Media Controls
+
+1. **Add New Layer**: Add a new layer for media controls.
+
+    ```python
+    layers = [
+        ...,
+        [Keycode.PLAY_PAUSE, Keycode.VOLUME_UP, Keycode.VOLUME_DOWN, Keycode.MUTE, ...]
+    ]
+    ```
+
+2. **Update `keycode_to_string`**: Add new entries for media keys.
+
+    ```python
+    def keycode_to_string(keycode):
+        keycode_dict = {
+            ...,
+            Keycode.PLAY_PAUSE: "Play",
+            Keycode.VOLUME_UP: "Vol+",
+            Keycode.VOLUME_DOWN: "Vol-",
+            Keycode.MUTE: "Mute",
+            ...
+        }
+        return keycode_dict.get(keycode, "Unknown Key")
+    ```
+
+#### Example 2: Custom Macro Layer
+
+1. **Add Custom Layer**: Suppose you want a layer for specific functions or shortcuts.
+
+    ```python
+    layers = [
+        ...,
+        [Keycode.COPY, Keycode.PASTE, Keycode.CUT, ...]
+    ]
+
+    ```
+
+2. **Update `keycode_to_string`**: Add new entries for these functions.
+
+    ```python
+    def keycode_to_string(keycode):
+        keycode_dict = {
+            ...,
+            Keycode.COPY: "Copy",
+            Keycode.PASTE: "Paste",
+            Keycode.CUT: "Cut",
+            ...
+        }
+        return keycode_dict.get(keycode, "Unknown Key")
+    ```
+
+### Important Notes
+
+- When adding new keycodes, ensure they are supported by the `adafruit_hid` library.
+- Test your changes carefully, especially if combining multiple keys into a macro.
+- Updating the display to match your macros helps keep track of each button's function, especially as you switch between layers.
+
+By following these guidelines, you can customize the macros and display information on your macropad to suit your specific needs.
