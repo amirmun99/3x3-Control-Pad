@@ -1,6 +1,8 @@
 # 3x3-Control-Pad
-A 9 Keyswitch Macro Pad with 2 rotary encoders and support for 6+ Layers of Macros.
----
+#### A 9 Keyswitch Macro Pad with 2 rotary encoders and support for 6+ Layers of Macros.
+
+![IMG_3787-Enhanced-SR](https://github.com/potatoworld/3x3-Control-Pad/assets/37276609/6662ef9d-826b-4a5b-83c7-40c6b0d42aef)
+
 
 - [3x3-Control-Pad](#3x3-control-pad)
   * [What is this?](#what-is-this)
@@ -23,12 +25,12 @@ A 9 Keyswitch Macro Pad with 2 rotary encoders and support for 6+ Layers of Macr
     + [Example 2: Custom Macro Layer](#example-2-custom-macro-layer)
   * [Important Notes](#important-notes)
 
----
+
 ## What is this?
 
 This is a simple 9 key + 2 encoder macropad that runs on a Pi Pico. Total build cost is under $30 if you shop smart. The case is 3D Printed and held together with magnets allowing for easy assembly. 
 
-There are 6 pages of macros availble to be set by the user.
+There are 6 pages of macros available to be set by the user.
 
 Below will be a guide on how to install the software. Pinout is in the file named "pinout.md". 
 
@@ -48,6 +50,8 @@ Below will be a guide on how to install the software. Pinout is in the file name
  ---
 
 # Printing/Case assembly
+
+https://www.printables.com/model/733026-3x3-control-pad-customizable-macropad-with-layers-
 
 The case prints in two parts, top and bottom. I printed them in ASA but any material should be fine. 2-3 walls and 15-25% infill for both parts.
 
@@ -250,3 +254,6 @@ def keycode_to_string(keycode):
 - Updating the display to match your macros helps keep track of each button's function, especially as you switch between layers.
 
 By following these guidelines, you can customize the macros and display information on your macropad to suit your specific needs.
+
+
+*(A portion of this guide was written by ChatGPT)*
